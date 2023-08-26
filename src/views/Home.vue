@@ -1,0 +1,163 @@
+<script setup>
+import NameJSON from "../assets/name.json";
+import Button from "../components/Button.vue";
+import { Icon } from "@iconify/vue";
+import { animate, stagger } from "motion";
+import SplitType from "split-type";
+import { onMounted } from "vue";
+onMounted(() => {
+  const headingOne = new SplitType("#headingOne", {
+    types: "chars",
+  });
+  const paraOne = new SplitType("#paraOne", {
+    types: "words",
+  });
+  const buttonWrap = document.querySelector("#buttonWrap");
+  const detailsWrap = document.querySelector("#detailsWrap");
+  const heroElements = [
+    ...headingOne.chars,
+    ...paraOne.words,
+    buttonWrap,
+    detailsWrap,
+  ];
+  animate(
+    heroElements,
+    {
+      y: [24, 0],
+      opacity: [0, 1],
+    },
+    {
+      duration: 0.5,
+      delay: stagger(0.05),
+    }
+  );
+});
+</script>
+
+<template>
+  <main class="mx-auto container">
+    <nav class="flex justify-between items-center py-2">
+      <button class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm">
+        About
+      </button>
+      <Vue3Lottie
+        :animation-data="NameJSON"
+        :height="30"
+        :width="40"
+        :loop="false"
+        :delay="5"
+      />
+      <div class="flex justify-start items-center space-x-2">
+        <button class="border p-1 rounded-md">
+          <Icon icon="arcticons:spike-email" class="w-6 h-6 text-gray-900" />
+        </button>
+      </div>
+    </nav>
+  </main>
+  <section class="mx-auto container overflow-hidden">
+    <div class="relative overflow-hidden rounded-3xl">
+      <div
+        class="absolute hidden -inset-x-8 scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+      >
+        <svg
+          class="w-full blur-3xl contrast-150"
+          viewBox="0 0 1440 1024"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_103_49)">
+            <path
+              data-color="pink"
+              class="fill-[#19004E] transition duration-500 data-[color=blue]:fill-blue-950 data-[color=cyan]:fill-cyan-950 data-[color=indigo]:fill-indigo-950 data-[color=lime]:fill-lime-950 data-[color=orange]:fill-orange-950/40 data-[color=pink]:fill-pink-950/40 data-[color=purple]:fill-purple-950/40 data-[color=red]:fill-red-950/40"
+              d="M795.5 572C1247.1 572 1365 190.667 1367.5 0H1552V1021H50V806C110.333 728 343.9 572 795.5 572Z"
+              fill="currentColor"
+            ></path>
+            <path
+              data-color="pink"
+              class="fill-[#19004E] transition duration-500 data-[color=blue]:fill-blue-950 data-[color=cyan]:fill-cyan-950 data-[color=indigo]:fill-indigo-950 data-[color=lime]:fill-lime-600/5 data-[color=orange]:fill-orange-950/40 data-[color=pink]:fill-pink-950/40 data-[color=purple]:fill-purple-950/40 data-[color=red]:fill-red-950/40"
+              d="M-73.1784 0L-563 316L-73.1784 632L418 316L-73.1784 0Z"
+              fill="currentColor"
+            ></path>
+            <path
+              data-color="pink"
+              class="opacity-60 transition duration-500 data-[color=blue]:fill-blue-500 data-[color=cyan]:fill-cyan-500 data-[color=indigo]:fill-[#916AFF] data-[color=lime]:fill-lime-500 data-[color=orange]:fill-orange-500 data-[color=pink]:fill-pink-500 data-[color=purple]:fill-purple-500 data-[color=red]:fill-red-500"
+              d="M1099.5 477C1235.9 453.8 1363.33 327.333 1410 267C1367.17 351 1257.8 530.1 1163 574.5C1068.2 618.9 750.167 623.667 603 620.5C711.667 582.333 963.1 500.2 1099.5 477Z"
+              fill="currentColor"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_103_49">
+              <rect width="1440" height="1024" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+      >
+        <div
+          class="blur-[106px] h-56 bg-gradient-to-br from-indigo-500 to-purple-400 dark:from-blue-700"
+        ></div>
+        <div
+          class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
+        ></div>
+      </div>
+      <div class="relative container m-auto px-6 md:px-12 lg:px-7">
+        <div class="py-40 ml-auto">
+          <div class="lg:w-2/3 text-center mx-auto">
+            <h1
+              class="text-gray-900 text-2xl dark:text-white font-medium flex justify-center items-center space-x-2"
+            >
+              <div id="headingOne">Hi, I am Atif 😉</div>
+            </h1>
+            <p
+              id="paraOne"
+              class="mt-4 capitalize text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-700 dark:text-gray-300"
+            >
+              Enhancing User Experiences with Advanced Frontend Development.
+            </p>
+            <div
+              id="buttonWrap"
+              class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6"
+            >
+              <button
+                class="hidden relative flex h-12 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-black before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+              >
+                <span
+                  class="relative text-base font-medium uppercase text-white dark:text-dark"
+                >
+                  See My Work
+                </span>
+              </button>
+              <Button />
+            </div>
+            <div
+              id="detailsWrap"
+              class="hidden pt-8 mt-16 border-t border-gray-100 dark:border-gray-700 sm:flex justify-between"
+            >
+              <div class="text-left">
+                <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+                  Top Rated @ Upwork
+                </h6>
+                <p class="mt-2 text-gray-500">Achivement🦾</p>
+              </div>
+              <div class="text-left">
+                <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+                  Attention to Detail
+                </h6>
+                <p class="mt-2 text-gray-500">Pixel perfect👀</p>
+              </div>
+              <div class="text-left">
+                <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+                  Vue, React, Svelte
+                </h6>
+                <p class="mt-2 text-gray-500">Love to use them🥰</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
