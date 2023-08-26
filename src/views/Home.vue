@@ -1,10 +1,13 @@
 <script setup>
 import NameJSON from "../assets/name.json";
+import AbstractJSON from "../assets/abstract.json";
 import Button from "../components/Button.vue";
+import Services from "../components/Services.vue";
 import { Icon } from "@iconify/vue";
 import { animate, stagger } from "motion";
 import SplitType from "split-type";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+const isShowLottie = ref(false);
 onMounted(() => {
   const headingOne = new SplitType("#headingOne", {
     types: "chars",
@@ -13,12 +16,12 @@ onMounted(() => {
     types: "words",
   });
   const buttonWrap = document.querySelector("#buttonWrap");
-  const detailsWrap = document.querySelector("#detailsWrap");
+  const detailsWraped = document.getElementsByClassName("detailsWrap");
   const heroElements = [
     ...headingOne.chars,
     ...paraOne.words,
     buttonWrap,
-    detailsWrap,
+    // detailsWrap,
   ];
   animate(
     heroElements,
@@ -30,7 +33,14 @@ onMounted(() => {
       duration: 0.5,
       delay: stagger(0.05),
     }
-  );
+  ).finished.then(() => {
+    isShowLottie.value = true;
+    animate(
+      detailsWraped,
+      { y: [24, 0], opacity: [0, 1] },
+      { duration: 0.5, delay: stagger(0.5) }
+    );
+  });
 });
 </script>
 
@@ -57,7 +67,7 @@ onMounted(() => {
   <section class="mx-auto container overflow-hidden">
     <div class="relative overflow-hidden rounded-3xl">
       <div
-        class="absolute hidden -inset-x-8 scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+        class="absolute hidden -inset-x-8 scale-y-150 dark:block sm:scale-y-100 lg:-top-56"
       >
         <svg
           class="w-full blur-3xl contrast-150"
@@ -103,8 +113,9 @@ onMounted(() => {
           class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
         ></div>
       </div>
+
       <div class="relative container m-auto px-6 md:px-12 lg:px-7">
-        <div class="py-40 ml-auto">
+        <div class="py-40 ml-auto relative z-10">
           <div class="lg:w-2/3 text-center mx-auto">
             <h1
               class="text-gray-900 text-2xl dark:text-white font-medium flex justify-center items-center space-x-2"
@@ -132,23 +143,24 @@ onMounted(() => {
               </button>
               <Button />
             </div>
+            <!-- v-show="isShowLottie" -->
             <div
-              id="detailsWrap"
+              :class="{ invisible: !isShowLottie }"
               class="hidden pt-8 mt-16 border-t border-gray-100 dark:border-gray-700 sm:flex justify-between"
             >
-              <div class="text-left">
+              <div class="detailsWrap text-left">
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
                   Top Rated @ Upwork
                 </h6>
                 <p class="mt-2 text-gray-500">Achivement🦾</p>
               </div>
-              <div class="text-left">
+              <div class="detailsWrap text-left">
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
                   Attention to Detail
                 </h6>
                 <p class="mt-2 text-gray-500">Pixel perfect👀</p>
               </div>
-              <div class="text-left">
+              <div class="detailsWrap text-left">
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
                   Vue, React, Svelte
                 </h6>
@@ -157,7 +169,16 @@ onMounted(() => {
             </div>
           </div>
         </div>
+        <div v-if="isShowLottie" class="absolute inset-0 z-0">
+          <Vue3Lottie
+            :animation-data="AbstractJSON"
+            :width="400"
+            :loop="false"
+            :delay="5"
+          />
+        </div>
       </div>
     </div>
   </section>
+  <Services />
 </template>
