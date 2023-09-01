@@ -1,4 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer components {
+  .grad {
+    @apply bg-gradient-to-tr from-pulse-yellow-100 to-pulse-yellow-200;
+  }
+  .grad-purple {
+    @apply bg-gradient-to-tr from-light-purple-100 to-light-purple-200;
+  }
+}

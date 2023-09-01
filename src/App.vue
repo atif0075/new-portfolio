@@ -23,8 +23,12 @@ onMounted(() => {
 
 <style>
 @import url("https://cdn.jsdelivr.net/gh/mortezaom/google-sans-cdn@master/fonts.css");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 * {
   font-family: "Google Sans", sans-serif;
+}
+.font-mono {
+  font-family: "Space Mono", monospace;
 }
 body {
   scroll-behavior: smooth;

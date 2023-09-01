@@ -1,12 +1,13 @@
 <script setup>
 import NameJSON from "../assets/name.json";
-import AbstractJSON from "../assets/abstract.json";
-import Button from "../components/Button.vue";
-import Services from "../components/Services.vue";
+import AbstractJSON from "../assets/abstract.json"; 
+// import Services from "../components/Services.vue";
 import { Icon } from "@iconify/vue";
-import { animate, stagger } from "motion";
+// import { animate, stagger } from "motion";
+import gsap from "gsap";
 import SplitType from "split-type";
 import { onMounted, ref } from "vue";
+import Work from "../components/Work.vue";
 const isShowLottie = ref(false);
 onMounted(() => {
   const headingOne = new SplitType("#headingOne", {
@@ -23,30 +24,62 @@ onMounted(() => {
     buttonWrap,
     // detailsWrap,
   ];
-  animate(
+  const tl = gsap.timeline();
+  tl.fromTo(
     heroElements,
     {
-      y: [24, 0],
-      opacity: [0, 1],
+      y: 24,
+      opacity: 0,
     },
     {
+      y: 0,
+      opacity: 1,
       duration: 0.5,
-      delay: stagger(0.05),
-    }
-  ).finished.then(() => {
-    isShowLottie.value = true;
-    animate(
-      detailsWraped,
-      { y: [24, 0], opacity: [0, 1] },
-      { duration: 0.5, delay: stagger(0.5) }
-    );
-  });
+      stagger: 0.05,
+      delay: 0.5,
+      onComplete: () => {
+        isShowLottie.value = true;
+        gsap.fromTo(
+          detailsWraped,
+          {
+            y: 24,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            stagger: 0.5,
+          }
+        );
+      },
+    },
+    "-=0.5"
+  );
+  // animate(
+  //   heroElements,
+  //   {
+  //     y: [24, 0],
+  //     opacity: [0, 1],
+  //   },
+  //   {
+  //     duration: 0.5,
+  //     delay: stagger(0.05),
+  //   }
+  // ).finished.then(() => {
+  //   isShowLottie.value = true;
+  //   animate(
+  //     detailsWraped,
+  //     { y: [24, 0], opacity: [0, 1] },
+  //     { duration: 0.5, delay: stagger(0.5) }
+  //   );
+  // });
 });
 </script>
 
 <template>
-  <main class="mx-auto container">
-    <nav class="flex justify-between items-center py-2">
+  <main class="container mx-auto">
+    <nav class="flex items-center justify-between py-2">
       <button class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm">
         About
       </button>
@@ -57,17 +90,17 @@ onMounted(() => {
         :loop="false"
         :delay="5"
       />
-      <div class="flex justify-start items-center space-x-2">
-        <button class="border p-1 rounded-md">
+      <div class="flex items-center justify-start space-x-2">
+        <button class="p-1 border rounded-md">
           <Icon icon="arcticons:spike-email" class="w-6 h-6 text-gray-900" />
         </button>
       </div>
     </nav>
   </main>
-  <section class="mx-auto container overflow-hidden">
+  <section class="container mx-auto overflow-hidden">
     <div class="relative overflow-hidden rounded-3xl">
       <div
-        class="absolute hidden -inset-x-8 scale-y-150 dark:block sm:scale-y-100 lg:-top-56"
+        class="absolute hidden scale-y-150 -inset-x-8 dark:block sm:scale-y-100 lg:-top-56"
       >
         <svg
           class="w-full blur-3xl contrast-150"
@@ -112,55 +145,59 @@ onMounted(() => {
         <div
           class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
         ></div>
+        <div
+          class="blur-[106px] h-56 bg-gradient-to-br from-pulse-yellow-100 to-pulse-yellow-200 dark:from-blue-700"
+        ></div>
+        <div
+          class="blur-[106px] h-32 bg-gradient-to-r from-pulse-yellow-200 to-pulse-yellow-100 dark:to-indigo-600"
+        ></div>
       </div>
 
-      <div class="relative container m-auto px-6 md:px-12 lg:px-7">
-        <div class="py-40 ml-auto relative z-10">
-          <div class="lg:w-2/3 text-center mx-auto">
+      <div class="container relative px-6 m-auto md:px-12 lg:px-7">
+        <div class="relative z-10 py-40 ml-auto">
+          <div class="mx-auto text-center lg:w-2/3">
             <h1
-              class="text-gray-900 text-2xl dark:text-white font-medium flex justify-center items-center space-x-2"
+              class="flex items-center justify-center space-x-2 text-2xl font-medium text-gray-900 dark:text-white"
             >
-              <div id="headingOne">Hi, I am Atif 😉</div>
+              <div id="headingOne" class="font-mono">Hi, I am Atif 😉</div>
             </h1>
             <p
               id="paraOne"
-              class="mt-4 capitalize text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-700 dark:text-gray-300"
+              class="mt-4 text-3xl font-bold text-gray-700 capitalize sm:text-5xl lg:text-6xl dark:text-gray-300"
             >
               Enhancing User Experiences with Advanced Frontend Development.
             </p>
             <div
               id="buttonWrap"
-              class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6"
+              class="flex flex-wrap justify-center mt-16 gap-y-4 gap-x-6"
             >
               <button
-                class="hidden relative flex h-12 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-black before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                class="group relative flex h-14 w-auto items-center px-10 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-tr before:to-pulse-yellow-100 before:from-pulse-yellow-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
               >
-                <span
-                  class="relative text-base font-medium uppercase text-white dark:text-dark"
-                >
+                <span class="relative w-max text-xl font-medium text-gray-800">
                   See My Work
                 </span>
               </button>
-              <Button />
+              <!-- <Button />  -->
             </div>
             <!-- v-show="isShowLottie" -->
             <div
               :class="{ invisible: !isShowLottie }"
-              class="hidden pt-8 mt-16 border-t border-gray-100 dark:border-gray-700 sm:flex justify-between"
+              class="justify-between hidden pt-8 mt-16 border-t border-gray-100 dark:border-gray-700 sm:flex"
             >
-              <div class="detailsWrap text-left">
+              <div class="text-left detailsWrap">
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
                   Top Rated @ Upwork
                 </h6>
                 <p class="mt-2 text-gray-500">Achivement🦾</p>
               </div>
-              <div class="detailsWrap text-left">
+              <div class="text-left detailsWrap">
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
                   Attention to Detail
                 </h6>
                 <p class="mt-2 text-gray-500">Pixel perfect👀</p>
               </div>
-              <div class="detailsWrap text-left">
+              <div class="text-left detailsWrap">
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
                   Vue, React, Svelte
                 </h6>
@@ -180,5 +217,6 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <Services />
+  <!-- <Services /> -->
+  <Work />
 </template>
