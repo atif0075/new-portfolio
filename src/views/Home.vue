@@ -1,6 +1,6 @@
 <script setup>
 import NameJSON from "../assets/name.json";
-import AbstractJSON from "../assets/abstract.json"; 
+import AbstractJSON from "../assets/abstract.json";
 // import Services from "../components/Services.vue";
 import { Icon } from "@iconify/vue";
 // import { animate, stagger } from "motion";
@@ -8,6 +8,7 @@ import gsap from "gsap";
 import SplitType from "split-type";
 import { onMounted, ref } from "vue";
 import Work from "../components/Work.vue";
+import Contact from "../components/Contact.vue";
 const isShowLottie = ref(false);
 onMounted(() => {
   const headingOne = new SplitType("#headingOne", {
@@ -219,4 +220,5 @@ onMounted(() => {
   </section>
   <!-- <Services /> -->
   <Work />
+  <Contact />
 </template>
