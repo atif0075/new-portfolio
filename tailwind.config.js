@@ -4,6 +4,14 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+        pop: "pop 2s ease-in-out linear",
+      },
+      borderRadius: {
+        "4xl": "2rem",
+        "5xl": "3rem",
+      },
       colors: {
         primary: "#6600ff",
         "pulse-yellow": {

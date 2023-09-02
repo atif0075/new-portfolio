@@ -52,4 +52,15 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 </style>
