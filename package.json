@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "gsap": "^3.12.2",
     "motion": "^10.16.2",
     "split-type": "^0.3.3",
