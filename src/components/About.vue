@@ -24,14 +24,18 @@ const skills = [
       </h1>
     </div>
     <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
       class="p-8 lg:p-10 mt-10 bg-gray-800 text-pulse-yellow-100 rounded-4xl relative"
     >
-      <h1 class="text-3xl">Atîf Mēhmööd</h1>
-      <p>Frontend Developer</p>
+      <h1 data-aos="fade-up" data-aos-duration="1100" class="text-3xl">
+        Atîf Mēhmööd
+      </h1>
+      <p data-aos="fade-up" data-aos-duration="1300">Frontend Developer</p>
       <div class="h-[1px] bg-pulse-yellow-100/50 mt-5"></div>
       <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div class="space-y-3">
-          <div>
+          <div data-aos="fade-up" data-aos-duration="1300">
             <h1>
               <i> Backgroud__ </i>
             </h1>
@@ -42,7 +46,7 @@ const skills = [
               that transforms recruitment with AI, chatbots, and live streaming.
             </p>
           </div>
-          <p>
+          <p data-aos="fade-up" data-aos-duration="1400">
             In addition to my full-time role, I'm also a Top-Rated Freelance Web
             Engineer on Upwork, where I've delivered quality solutions to
             clients around the globe, using Vue 3, React, Svelte, Nuxt 3,
@@ -52,31 +56,37 @@ const skills = [
           </p>
         </div>
         <div class="space-y-3">
-          <h1>
-            <i> Enthusiasms__ </i>
-          </h1>
-          <p>
-            Beyond coding, I'm also an advocate for knowledge-sharing and
-            community-building. I enjoy contributing to open-source projects,
-            writing insightful articles, and engaging in meaningful discussions
-            that empower aspiring developers.
-          </p>
-          <h1 class="text-3xl font-bold text-pulse-yellow-100 mt-5">
+          <div data-aos="fade-up" data-aos-duration="1300">
+            <h1>
+              <i> Enthusiasms__ </i>
+            </h1>
+            <p>
+              Beyond coding, I'm also an advocate for knowledge-sharing and
+              community-building. I enjoy contributing to open-source projects,
+              writing insightful articles, and engaging in meaningful
+              discussions that empower aspiring developers.
+            </p>
+          </div>
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="1300"
+            class="text-3xl font-bold text-pulse-yellow-100 mt-5"
+          >
             <q> In a world of reversals, I code forward. </q>
           </h1>
-          <div>
-              <h1>
-                <i> Skills __ </i>
-              </h1>
-              <div class="w-full flex justify-start items-start flex-wrap">
-                <span
-                  v-for="(item, index) in skills"
-                  :key="index"
-                  class="text-gray-700 bg-pulse-yellow-200 text-xs font-medium m-1 whitespace-nowrap px-3 py-1 rounded-full border border-pulse-yellow-200"
-                >
-                  {{ item }}</span
-                >
-              </div>
+          <div data-aos="fade-up" data-aos-duration="1300">
+            <h1>
+              <i> Skills __ </i>
+            </h1>
+            <div class="w-full flex justify-start items-start flex-wrap">
+              <span
+                v-for="(item, index) in skills"
+                :key="index"
+                class="text-gray-700 bg-pulse-yellow-200 text-xs font-medium m-1 whitespace-nowrap px-3 py-1 rounded-full border border-pulse-yellow-200"
+              >
+                {{ item }}</span
+              >
+            </div>
           </div>
         </div>
       </div>
