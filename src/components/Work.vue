@@ -1,9 +1,9 @@
 <script setup>
 import gsap from "gsap";
-import SplitType from "split-type";
+import { workData } from "../db";
 import { onMounted, ref } from "vue";
 import { ScrollTrigger } from "gsap/all";
-import { animate, inView, timeline } from "motion";
+import { animate, inView } from "motion";
 import WorkCard from "./WorkCard.vue";
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
@@ -66,10 +66,10 @@ const workArray = [
           id="headingOne"
           class="mt-4 tracking-widest font-mono text-3xl font-bold text-gray-700 capitalize sm:text-5xl lg:text-7xl dark:text-gray-300"
         >
-          Work
+          {{ workData.title }}
         </h1>
       </div>
-      <WorkCard :work-array="workArray" />
+      <WorkCard />
     </div>
   </section>
 </template>

@@ -3,6 +3,7 @@ import { Icon } from "@iconify/vue";
 </script>
 <template>
   <div class="container py-16 mx-auto">
+    <!-- <button @click="morph">Morph!</button> -->
     <div data-aos="fade-up" data-aos-duration="1000">
       <h1
         class="mt-4 font-mono text-3xl font-bold tracking-widest text-gray-700 capitalize sm:text-5xl lg:text-7xl dark:text-gray-300"
@@ -10,73 +11,102 @@ import { Icon } from "@iconify/vue";
         Contact
       </h1>
     </div>
-    <div class="grid grid-cols-3 gap-5 mt-10">
+    <div class="grid grid-cols-3 gap-5 mt-10 relative z-20">
       <div class="grid grid-cols-2 gap-5">
-        <button
+        <a
+          href="https://github.com/atif0075"
+          target="_blank"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="relative flex flex-col items-center justify-center w-full p-8 px-4 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+        >
+          <button
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+            class="text-pulse-yellow-200"
+          >
+            <span
+              class="relative flex flex-col items-center justify-center text-2xl font-medium"
+            >
+              <Icon
+                icon="mdi:github"
+                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
+              />
+              Github
+            </span>
+          </button>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/atif0075/"
+          target="_blank"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="relative flex flex-col items-center justify-center w-full p-8 px-4 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+        >
+          <button
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+            class="text-gray-800"
+          >
+            <span
+              class="relative flex flex-col items-center justify-center text-2xl font-medium"
+            >
+              <Icon
+                icon="prime:linkedin"
+                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
+              />
+              Linkedin
+            </span>
+          </button>
+        </a>
+
+        <a
+          href="mailto:connectsatif@gmail.com"
+          target="_blank"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="relative flex flex-col items-center justify-center w-full p-8 px-4 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+        >
+          <button
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+            class="text-gray-800"
+          >
+            <span
+              class="relative flex flex-col items-center justify-center text-2xl font-medium"
+            >
+              <Icon
+                icon="basil:envelope-solid"
+                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
+              />
+              Email
+            </span>
+          </button>
+        </a>
+        <a
+          href="https://wa.me/923029798428"
           data-aos="fade-up"
           data-aos-duration="1000"
           class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-pulse-yellow-200 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
-          <span
-            class="relative flex flex-col items-center justify-center text-2xl font-medium"
-          >
-            <Icon
-              icon="mdi:github"
-              class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-            />
-            Github
-          </span>
-        </button>
-        <button
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-gray-800 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
-        >
-          <span
-            class="relative flex flex-col items-center justify-center text-2xl font-medium"
-          >
-            <Icon
-              icon="fa6-brands:linkedin"
-              class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-            />
-            Linkedin
-          </span>
-        </button>
-        <button
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-gray-800 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
-        >
-          <span
-            class="relative flex flex-col items-center justify-center text-2xl font-medium"
-          >
-            <Icon
-              icon="basil:envelope-solid"
-              class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-            />
-            Email
-          </span>
-        </button>
-        <button
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-pulse-yellow-200 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
-        >
-          <span
-            class="relative flex flex-col items-center justify-center text-2xl font-medium"
-          >
-            <Icon
-              icon="ic:twotone-whatsapp"
-              class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-            />
-            Whatsapp
-          </span>
-        </button>
+          <button data-aos="zoom-in" data-aos-duration="1200">
+            <span
+              class="relative flex flex-col items-center justify-center text-2xl font-medium"
+            >
+              <Icon
+                icon="ic:twotone-whatsapp"
+                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
+              />
+              Whatsapp
+            </span>
+          </button>
+        </a>
       </div>
       <div
-      data-aos="fade-up"
+        data-aos="fade-up"
         data-aos-duration="1200"
-      class="col-span-2 p-10 grad rounded-4xl">
+        class="col-span-2 p-10 grad rounded-4xl"
+      >
         <div class="grid grid-cols-2 gap-5 space-y-2">
           <div class="grid gap-5">
             <input
@@ -116,3 +146,4 @@ import { Icon } from "@iconify/vue";
     </div>
   </div>
 </template>
+<style></style>

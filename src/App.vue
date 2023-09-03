@@ -5,9 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 onMounted(() => {
   AOS.init();
-  const lenis = new Lenis();
-
-  lenis.on("scroll", (e) => {});
+  const lenis = new Lenis({ wrapper: document.body });
 
   function raf(time) {
     lenis.raf(time);
@@ -35,6 +33,7 @@ onMounted(() => {
 }
 body {
   scroll-behavior: smooth;
+  scroll-behavior: cubic-bezier(0.42, 0, 0.58, 1);
 }
 html.lenis {
   height: auto;

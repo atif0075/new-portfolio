@@ -5,10 +5,13 @@ import AbstractJSON from "../assets/abstract.json";
 import { Icon } from "@iconify/vue";
 // import { animate, stagger } from "motion";
 import gsap from "gsap";
+import MoveTo from "moveto";
 import SplitType from "split-type";
 import { onMounted, ref } from "vue";
 import Work from "../components/Work.vue";
+import About from "../components/About.vue";
 import Contact from "../components/Contact.vue";
+import { heroData } from "../db";
 const isShowLottie = ref(false);
 onMounted(() => {
   const headingOne = new SplitType("#headingOne", {
@@ -57,29 +60,21 @@ onMounted(() => {
     },
     "-=0.5"
   );
-  // animate(
-  //   heroElements,
-  //   {
-  //     y: [24, 0],
-  //     opacity: [0, 1],
-  //   },
-  //   {
-  //     duration: 0.5,
-  //     delay: stagger(0.05),
-  //   }
-  // ).finished.then(() => {
-  //   isShowLottie.value = true;
-  //   animate(
-  //     detailsWraped,
-  //     { y: [24, 0], opacity: [0, 1] },
-  //     { duration: 0.5, delay: stagger(0.5) }
-  //   );
-  // });
 });
+onMounted(() => {});
+const scrollToWork = () => {
+  const moveTo = new MoveTo({
+    tolerance: 0,
+    duration: 800,
+    easing: "easeOutQuart",
+  });
+  const target = document.getElementById("work");
+  moveTo.move(target);
+};
 </script>
 
 <template>
-  <main class="container mx-auto">
+  <main id="nav" class="container mx-auto">
     <nav class="flex items-center justify-between py-2">
       <button class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm">
         About
@@ -160,25 +155,30 @@ onMounted(() => {
             <h1
               class="flex items-center justify-center space-x-2 text-2xl font-medium text-gray-900 dark:text-white"
             >
-              <div id="headingOne" class="font-mono">Hi, I am Atif 😉</div>
+              <div id="headingOne" class="font-mono">
+                Hi, I am {{ heroData.name }} 😉
+              </div>
             </h1>
             <p
               id="paraOne"
               class="mt-4 text-3xl font-bold text-gray-700 capitalize sm:text-5xl lg:text-6xl dark:text-gray-300"
             >
-              Enhancing User Experiences with Advanced Frontend Development.
+              {{ heroData.title }}
             </p>
             <div
               id="buttonWrap"
               class="flex flex-wrap justify-center mt-16 gap-y-4 gap-x-6"
             >
               <button
+                id="buttonOne"
+                @click="scrollToWork"
                 class="group relative flex h-14 w-auto items-center px-10 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-tr before:to-pulse-yellow-100 before:from-pulse-yellow-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
               >
                 <span class="relative w-max text-xl font-medium text-gray-800">
                   See My Work
                 </span>
               </button>
+
               <!-- <Button />  -->
             </div>
             <!-- v-show="isShowLottie" -->
@@ -186,23 +186,17 @@ onMounted(() => {
               :class="{ invisible: !isShowLottie }"
               class="justify-between hidden pt-8 mt-16 border-t border-gray-100 dark:border-gray-700 sm:flex"
             >
-              <div class="text-left detailsWrap">
+              <div
+                v-for="(item, index) in heroData.achivements"
+                :key="index"
+                class="text-left detailsWrap"
+              >
                 <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-                  Top Rated @ Upwork
+                  {{ item.title }}
                 </h6>
-                <p class="mt-2 text-gray-500">Achivement🦾</p>
-              </div>
-              <div class="text-left detailsWrap">
-                <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-                  Attention to Detail
-                </h6>
-                <p class="mt-2 text-gray-500">Pixel perfect👀</p>
-              </div>
-              <div class="text-left detailsWrap">
-                <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-                  Vue, React, Svelte
-                </h6>
-                <p class="mt-2 text-gray-500">Love to use them🥰</p>
+                <p class="mt-2 text-gray-500">
+                  {{ item.desc }}
+                </p>
               </div>
             </div>
           </div>
@@ -220,5 +214,6 @@ onMounted(() => {
   </section>
   <!-- <Services /> -->
   <Work />
+  <About />
   <Contact />
 </template>
