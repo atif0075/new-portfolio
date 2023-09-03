@@ -71,11 +71,8 @@ import { workData } from "../db";
         :sm="item.sm"
         :title="item.title"
         :description="item.description"
-        :class="index === 0 ? '' : 'col-span-2'"
+        :class="index === 0 ? '' : 'lg:col-span-2'"
       />
-      <!-- <Card color="dark" sm title="WYSIWYG" />
-      <Card sm title="Vuefire notes" class="col-span-2" /> -->
-      <!-- <Card sm title="prestiio" /> -->
     </div>
   </main>
 </template>
