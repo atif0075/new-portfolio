@@ -61,14 +61,13 @@ onMounted(() => {
     "-=0.5"
   );
 });
-onMounted(() => {});
-const scrollToWork = () => {
+const scrollTo = (id, duration = 2000) => {
   const moveTo = new MoveTo({
     tolerance: 0,
-    duration: 800,
+    duration: duration,
     easing: "easeOutQuart",
   });
-  const target = document.getElementById("work");
+  const target = document.getElementById(id);
   moveTo.move(target);
 };
 </script>
@@ -76,7 +75,10 @@ const scrollToWork = () => {
 <template>
   <main id="nav" class="container mx-auto">
     <nav class="flex items-center justify-between py-2">
-      <button class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm">
+      <button
+        @click="scrollTo('about', 4000)"
+        class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm"
+      >
         About
       </button>
       <Vue3Lottie
@@ -171,7 +173,7 @@ const scrollToWork = () => {
             >
               <button
                 id="buttonOne"
-                @click="scrollToWork"
+                @click="scrollTo('work')"
                 class="group relative flex h-14 w-auto items-center px-10 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-tr before:to-pulse-yellow-100 before:from-pulse-yellow-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
               >
                 <span class="relative w-max text-xl font-medium text-gray-800">
