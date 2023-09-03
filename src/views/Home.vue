@@ -76,7 +76,7 @@ const scrollTo = (id, duration = 2000) => {
   <main id="nav" class="container mx-auto">
     <nav class="flex items-center justify-between py-2">
       <button
-        @click="scrollTo('about', 4000)"
+        @click="scrollTo('about',5000)"
         class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm"
       >
         About
