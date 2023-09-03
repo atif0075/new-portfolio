@@ -1,7 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted } from "vue";
+import AOS from "aos";
+import "aos/dist/aos.css";
 onMounted(() => {
+  AOS.init();
   const lenis = new Lenis();
 
   lenis.on("scroll", (e) => {});

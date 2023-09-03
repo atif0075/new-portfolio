@@ -1,8 +1,8 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+
+// import aos
+
 import { onMounted } from "vue";
 defineProps({
   title: String,
@@ -15,34 +15,19 @@ defineProps({
   },
   sm: Boolean,
 });
-onMounted(() => {
-  const cards = document.querySelectorAll(".card");
 
-  // Create a GSAP timeline with staggered animations
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: cards, // Trigger animation when the cards enter the viewport
-      start: "top center", // Adjust the starting point as needed
-      end: "bottom center", // Adjust the ending point as needed
-      scrub: true, // Enables smooth scrolling-based animation
-    },
-  });
 
-  tl.from(cards, {
-    opacity: 0,
-    y: 50,
-    stagger: 0.2, // Adjust the stagger amount
-  });
-});
 </script>
 <template>
   <div
+    data-aos="fade-up"
+    data-aos-duration="1000"
     :class="
       color === 'dark'
         ? 'bg-gray-800 text-pulse-yellow-200'
         : 'grad text-gray-800'
     "
-    class="card hover:scale-95 flex flex-col justify-between duration-300 ease-in-out p-10 space-y-3 rounded-5xl"
+    class="hover:scale-95 flex flex-col justify-between duration-300 ease-in-out p-10 space-y-3 rounded-5xl"
   >
     <h1
       :class="

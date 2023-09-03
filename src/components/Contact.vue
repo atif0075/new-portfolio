@@ -3,9 +3,8 @@ import { Icon } from "@iconify/vue";
 </script>
 <template>
   <div class="container py-16 mx-auto">
-    <div>
+    <div data-aos="fade-up" data-aos-duration="1000">
       <h1
-        id="headingOne"
         class="mt-4 font-mono text-3xl font-bold tracking-widest text-gray-700 capitalize sm:text-5xl lg:text-7xl dark:text-gray-300"
       >
         Contact
@@ -14,6 +13,8 @@ import { Icon } from "@iconify/vue";
     <div class="grid grid-cols-3 gap-5 mt-10">
       <div class="grid grid-cols-2 gap-5">
         <button
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-pulse-yellow-200 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
           <span
@@ -27,6 +28,8 @@ import { Icon } from "@iconify/vue";
           </span>
         </button>
         <button
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-gray-800 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
           <span
@@ -40,6 +43,8 @@ import { Icon } from "@iconify/vue";
           </span>
         </button>
         <button
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-gray-800 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
           <span
@@ -53,6 +58,8 @@ import { Icon } from "@iconify/vue";
           </span>
         </button>
         <button
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-pulse-yellow-200 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
           <span
@@ -66,7 +73,10 @@ import { Icon } from "@iconify/vue";
           </span>
         </button>
       </div>
-      <div class="col-span-2 p-10 grad rounded-4xl">
+      <div
+      data-aos="fade-up"
+        data-aos-duration="1200"
+      class="col-span-2 p-10 grad rounded-4xl">
         <div class="grid grid-cols-2 gap-5 space-y-2">
           <div class="grid gap-5">
             <input
