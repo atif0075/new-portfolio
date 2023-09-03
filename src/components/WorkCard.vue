@@ -2,6 +2,8 @@
 import { Icon } from "@iconify/vue";
 import Card from "./Card.vue";
 import Crew1 from "../assets/crew-dog/m1.png";
+import { onMounted } from "vue";
+import { animate, inView } from "motion";
 defineProps({
   workArray: {
     type: Array,
