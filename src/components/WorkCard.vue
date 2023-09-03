@@ -7,7 +7,7 @@ import { animate, inView } from "motion";
 import { workData } from "../db";
 </script>
 <template>
-  <main class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10 p-2">
+  <main class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
     <Card
       :image="Crew1"
       :title="workData.work[0].title"
@@ -24,7 +24,7 @@ import { workData } from "../db";
       />
     </div>
   </main>
-  <main class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5 p-2">
+  <main class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
     <Card
       v-for="(item, index) in workData.work[2]"
       :key="index"
@@ -40,7 +40,7 @@ import { workData } from "../db";
     /> -->
   </main>
 
-  <main class="grid mt-5 p-2">
+  <main class="grid mt-5">
     <div class="grid gap-5">
       <Card
         :color="workData.work[3].color"
@@ -50,7 +50,7 @@ import { workData } from "../db";
       />
     </div>
   </main>
-  <main class="grid mt-5 p-2">
+  <main class="grid mt-5">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       <Card
         v-for="(item, index) in workData.work[4]"

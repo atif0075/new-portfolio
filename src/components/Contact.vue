@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 </script>
 <template>
-  <div class="container py-16 mx-auto">
+  <div class="container py-16 mx-auto p-2">
     <!-- <button @click="morph">Morph!</button> -->
     <div data-aos="fade-up" data-aos-duration="1000">
       <h1
@@ -11,7 +11,7 @@ import { Icon } from "@iconify/vue";
         Contact
       </h1>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10 p-2">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
       <div class="grid grid-cols-2 gap-5">
         <a
           href="https://github.com/atif0075"

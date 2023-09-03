@@ -60,7 +60,7 @@ const workArray = [
 </script>
 <template>
   <section id="work">
-    <div class="container mx-auto py-16">
+    <div class="container mx-auto py-16 p-2">
       <div>
         <h1
           id="headingOne"
