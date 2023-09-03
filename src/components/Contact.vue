@@ -11,7 +11,7 @@ import { Icon } from "@iconify/vue";
         Contact
       </h1>
     </div>
-    <div class="grid grid-cols-3 gap-5 mt-10 relative z-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10 p-2">
       <div class="grid grid-cols-2 gap-5">
         <a
           href="https://github.com/atif0075"
@@ -105,9 +105,9 @@ import { Icon } from "@iconify/vue";
       <div
         data-aos="fade-up"
         data-aos-duration="1200"
-        class="col-span-2 p-10 grad rounded-4xl"
+        class="lg:col-span-2 p-8 lg:p-10 grad rounded-4xl"
       >
-        <div class="grid grid-cols-2 gap-5 space-y-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 space-y-2">
           <div class="grid gap-5">
             <input
               placeholder="Name"

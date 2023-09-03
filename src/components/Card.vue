@@ -15,8 +15,6 @@ defineProps({
   },
   sm: Boolean,
 });
-
-
 </script>
 <template>
   <div
@@ -27,7 +25,7 @@ defineProps({
         ? 'bg-gray-800 text-pulse-yellow-200'
         : 'grad text-gray-800'
     "
-    class="hover:scale-95 flex flex-col justify-between duration-300 ease-in-out p-10 space-y-3 rounded-5xl"
+    class="hover:scale-95 flex flex-col justify-between duration-300 ease-in-out p-8 lg:p-10 space-y-3 rounded-5xl"
   >
     <h1
       :class="
@@ -42,7 +40,7 @@ defineProps({
     <div
       v-if="image"
       :style="`background-image: url(${image})`"
-      class="h-64 bg-cover"
+      class="h-64 bg-cover hidden md:block"
     ></div>
     <p>
       {{ description }}
