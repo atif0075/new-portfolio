@@ -1,6 +1,7 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 import DarkBg from "./DarkBg.vue";
+import { ref } from "vue";
 const btnList = [
   {
     title: "Github",
@@ -25,6 +26,10 @@ const btnList = [
     color: "dark",
   },
 ];
+const submited = ref(false);
+const submittedMsg = () => {
+  submited.value = true;
+};
 </script>
 <template>
   <div class="container p-2 py-16 mx-auto">
@@ -70,9 +75,13 @@ const btnList = [
         </a>
       </div>
 
-      <div
+      <form
         data-aos="fade-up"
         data-aos-duration="1200"
+        v-if="!submited"
+        action="https://formsubmit.co/connectsatif@gmail.com"
+        method="post"
+        @submit.prevent="submittedMsg"
         class="relative p-8 lg:col-span-2 lg:p-10 grad rounded-5xl"
       >
         <div class="grid grid-cols-1 gap-5 space-y-2 lg:grid-cols-2">
@@ -81,6 +90,8 @@ const btnList = [
               <input
                 placeholder="Name"
                 type="text"
+                name="name"
+                required
                 class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               />
               <div
@@ -93,6 +104,8 @@ const btnList = [
               <input
                 placeholder="Email"
                 type="email"
+                name="email"
+                required
                 class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border dark:border-none outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               />
               <div
@@ -108,7 +121,8 @@ const btnList = [
             >
               <textarea
                 placeholder="Your Message"
-                resize="none"
+                name="message"
+                required
                 class="w-full h-full resize-none relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 dark:border-none rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               ></textarea>
               <div
@@ -122,6 +136,7 @@ const btnList = [
         </div>
         <div class="mt-5">
           <button
+            type="submit"
             class="relative overflow-hidden flex items-center justify-center w-full p-5 px-4 group rounded-3xl bg-gray-900 transition-all duration-300 ease-in-out text-pulse-yellow-200"
           >
             <div
@@ -141,6 +156,54 @@ const btnList = [
               Send
             </span>
           </button>
+        </div>
+      </form>
+      <div
+        v-else
+        class="relative overflow-hidden p-8 lg:col-span-2 lg:p-10 dark:bg-gray-900 rounded-5xl"
+      >
+        <h1
+          class="text-3xl text-center font-medium text-gray-800 dark:text-pulse-yellow-400"
+        >
+          Your message has been sent successfully. I will get back to you as
+          soon as possible.
+        </h1>
+        <div
+          class="absolute z-0 -inset-x-8 hidden scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+        >
+          <svg
+            class="w-full blur-3xl contrast-150 hidden lg:block"
+            viewBox="0 0 1440 1024"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_103_49)">
+              <path
+                data-color="lime"
+                class="fill-gray-950 transition duration-500"
+                d="M795.5 572C1247.1 572 1365 190.667 1367.5 0H1552V1021H50V806C110.333 728 343.9 572 795.5 572Z"
+                fill="currentColor"
+              ></path>
+              <path
+                data-color="lime"
+                class="fill-gray-950 transition duration-500"
+                d="M-73.1784 0L-563 316L-73.1784 632L418 316L-73.1784 0Z"
+                fill="currentColor"
+              ></path>
+              <path
+                data-color="lime"
+                class="opacity-60 transition duration-500"
+                d="M1099.5 477C1235.9 453.8 1363.33 327.333 1410 267C1367.17 351 1257.8 530.1 1163 574.5C1068.2 618.9 750.167 623.667 603 620.5C711.667 582.333 963.1 500.2 1099.5 477Z"
+                fill="currentColor"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_103_49">
+                <rect width="1440" height="1024" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <DarkBg class="lg:hidden" />
         </div>
       </div>
     </div>

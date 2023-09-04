@@ -108,6 +108,7 @@ const openLink = (link) => {
         </span>
       </button>
       <button
+        v-if="false"
         :class="
           color === 'dark'
             ? 'before:bg-pulse-yellow-200 text-gray-800'
