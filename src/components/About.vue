@@ -14,26 +14,27 @@ const skills = [
 ];
 </script>
 <template>
-  <div id="about" class="container py-16 mx-auto p-2">
+  <div id="about" class="container p-2 py-16 mx-auto">
     <!-- <button @click="morph">Morph!</button> -->
     <div data-aos="fade-up" data-aos-duration="1000">
       <h1
-        class="mt-4 font-mono text-3xl font-bold tracking-widest text-gray-700 capitalize sm:text-5xl lg:text-7xl dark:text-gray-300"
+        class="relative inline-block mt-4 font-mono text-3xl font-bold tracking-widest text-gray-700 capitalize sm:text-5xl lg:text-7xl dark:text-gray-300"
       >
-        About Me
+        <span class="absolute top-0 right-10 text-2xl lowercase"> me </span>
+        About
       </h1>
     </div>
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      class="p-8 lg:p-10 mt-10 bg-gray-800 text-pulse-yellow-100 rounded-4xl relative"
+      class="relative p-8 mt-10 bg-gray-800 lg:p-10 text-pulse-yellow-100 rounded-4xl"
     >
       <h1 data-aos="fade-up" data-aos-duration="1100" class="text-3xl">
         Atîf Mēhmööd
       </h1>
       <p data-aos="fade-up" data-aos-duration="1300">Frontend Developer</p>
       <div class="h-[1px] bg-pulse-yellow-100/50 mt-5"></div>
-      <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 gap-5 mt-5 lg:grid-cols-2">
         <div class="space-y-3">
           <div data-aos="fade-up" data-aos-duration="1300">
             <h1>
@@ -70,7 +71,7 @@ const skills = [
           <h1
             data-aos="fade-up"
             data-aos-duration="1300"
-            class="text-3xl font-bold text-pulse-yellow-100 mt-5"
+            class="mt-5 text-3xl font-bold text-pulse-yellow-100"
           >
             <q> In a world of reversals, I code forward. </q>
           </h1>
@@ -78,11 +79,11 @@ const skills = [
             <h1>
               <i> Skills __ </i>
             </h1>
-            <div class="w-full flex justify-start items-start flex-wrap">
+            <div class="flex flex-wrap items-start justify-start w-full">
               <span
                 v-for="(item, index) in skills"
                 :key="index"
-                class="text-gray-700 bg-pulse-yellow-200 text-xs font-medium m-1 whitespace-nowrap px-3 py-1 rounded-full border border-pulse-yellow-200"
+                class="px-3 py-1 m-1 text-xs font-medium text-gray-700 border rounded-full bg-pulse-yellow-200 whitespace-nowrap border-pulse-yellow-200"
               >
                 {{ item }}</span
               >
