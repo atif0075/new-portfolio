@@ -1,100 +1,59 @@
 <script setup></script>
 <template>
-  <svg
-    class="w-full blur-xl contrast-150"
-    viewBox="0 0 500 500"
+  <!-- <svg
+    class="w-full blur-3xl contrast-150"
+    viewBox="0 0 501 499"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_103_49)">
-      <path
-        data-color="lime"
-        class="fill-gray-950 transition duration-500"
-        d="M795.5 572C1247.1 572 1365 190.667 1367.5 0H1552V1021H50V806C110.333 728 343.9 572 795.5 572Z"
-        fill="currentColor"
-      ></path>
-      <path
-        data-color="lime"
-        class="fill-gray-950 transition duration-500"
-        d="M-73.1784 0L-563 316L-73.1784 632L418 316L-73.1784 0Z"
-        fill="currentColor"
-      ></path>
-      <path
-        data-color="lime"
-        class="opacity-60 transition duration-500"
-        d="M1099.5 477C1235.9 453.8 1363.33 327.333 1410 267C1367.17 351 1257.8 530.1 1163 574.5C1068.2 618.9 750.167 623.667 603 620.5C711.667 582.333 963.1 500.2 1099.5 477Z"
-        fill="currentColor"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_103_49">
-        <rect width="1440" height="1024" fill="white"></rect>
-      </clipPath>
-    </defs>
-  </svg>
-  <svg
-    class="w-full blur-xl contrast-150 rotate-180"
+    <path
+      d="M 113 171 C 179.4 189.4 194 64.7 193 0 H 0 V 200 C 10 182.7 46.6 152.6 113 171 Z"
+      class="fill-gray-950 transition duration-500"
+    />
+    <path
+      d="M 501 98 V 0 H 397 C 408.3 7.7 431.4 31.2 433 64 C 434.6 96.8 479 100.3 501 98 Z"
+      class="fill-gray-950 transition duration-500"
+    />
+    <path
+      d="M 376.6 378.8 C 458.7 362.8 493.8 280.9 501 242 V 499 H 250 C 258.1 465.6 294.5 394.9 376.6 378.8 Z"
+      class="fill-gray-950 transition duration-500"
+    />
+    <path
+      d="M 71 436 C 67.8 400.8 22.3 350.7 0 330 V 499 H 91 C 85.7 492.7 74.2 471.2 71 436 Z"
+      class="fill-gray-950 transition duration-500"
+    />
+  </svg> -->
+  <!-- <svg
+    class="w-full blur-3xl contrast-150"
     viewBox="0 0 500 500"
+    fill="none" 
+  >
+    <rect
+      width="500"
+      height="500"
+      class="fill-gray-950 transition duration-500"
+    />
+    <path
+      d="M366 143C258 152.6 228.333 233 227 272C143 441.6 272 400.667 347 359C398.333 283 474 133.4 366 143Z"
+      fill="#cee6ba"
+    />
+  </svg> -->
+  <svg
+    class="w-full blur-3xl contrast-150"
+    viewBox="0 0 500 500"
+    height="100%"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_103_49)">
-      <path
-        data-color="lime"
-        class="fill-gray-950 transition duration-500"
-        d="M795.5 572C1247.1 572 1365 190.667 1367.5 0H1552V1021H50V806C110.333 728 343.9 572 795.5 572Z"
-        fill="currentColor"
-      ></path>
-      <path
-        data-color="lime"
-        class="fill-gray-950 transition duration-500"
-        d="M-73.1784 0L-563 316L-73.1784 632L418 316L-73.1784 0Z"
-        fill="currentColor"
-      ></path>
-      <path
-        data-color="lime"
-        class="opacity-60 transition duration-500"
-        d="M1099.5 477C1235.9 453.8 1363.33 327.333 1410 267C1367.17 351 1257.8 530.1 1163 574.5C1068.2 618.9 750.167 623.667 603 620.5C711.667 582.333 963.1 500.2 1099.5 477Z"
-        fill="currentColor"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_103_49">
-        <rect width="1440" height="1024" fill="white"></rect>
-      </clipPath>
-    </defs>
-  </svg>
-  <svg
-    class="w-full blur-xl contrast-150"
-    viewBox="0 0 500 500"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g clip-path="url(#clip0_103_49)">
-      <path
-        data-color="lime"
-        class="fill-gray-950 transition duration-500"
-        d="M795.5 572C1247.1 572 1365 190.667 1367.5 0H1552V1021H50V806C110.333 728 343.9 572 795.5 572Z"
-        fill="currentColor"
-      ></path>
-      <path
-        data-color="lime"
-        class="fill-gray-950 transition duration-500"
-        d="M-73.1784 0L-563 316L-73.1784 632L418 316L-73.1784 0Z"
-        fill="currentColor"
-      ></path>
-      <path
-        data-color="lime"
-        class="opacity-60 transition duration-500"
-        d="M1099.5 477C1235.9 453.8 1363.33 327.333 1410 267C1367.17 351 1257.8 530.1 1163 574.5C1068.2 618.9 750.167 623.667 603 620.5C711.667 582.333 963.1 500.2 1099.5 477Z"
-        fill="currentColor"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_103_49">
-        <rect width="1440" height="1024" fill="white"></rect>
-      </clipPath>
-    </defs>
+    <rect
+      width="500"
+      height="500"
+      class="fill-gray-950 transition duration-500"
+    />
+    <path
+      d="M366 143C258 152.6 377.333 170 376 209C292 378.6 272 400.667 347 359C398.333 283 474 133.4 366 143Z"
+      fill="#cee6ba"
+    />
   </svg>
 </template>
 <style scoped></style>

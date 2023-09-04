@@ -2,6 +2,7 @@
 import NameJSON from "../assets/name.json";
 import AbstractJSON from "../assets/abstract.json";
 // import Services from "../components/Services.vue";
+import ScrollDown from "../components/ScrollDown.vue";
 import { Icon } from "@iconify/vue";
 // import { animate, stagger } from "motion";
 import HeroBg from "../components/HeroBg.vue";
@@ -13,6 +14,7 @@ import Work from "../components/Work.vue";
 import About from "../components/About.vue";
 import Contact from "../components/Contact.vue";
 import { heroData } from "../db";
+import DarkBg from "../components/DarkBg.vue";
 const isShowLottie = ref(false);
 onMounted(() => {
   const headingOne = new SplitType("#headingOne", {
@@ -134,7 +136,11 @@ setTheme(getTheme());
   <section class="container mx-auto overflow-hidden">
     <div class="relative overflow-hidden rounded-4xl">
       <HeroBg />
-
+      <div
+        class="absolute z-0 -inset-x-8 hidden scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+      >
+        <DarkBg class="sm:hidden" />
+      </div>
       <div class="container relative px-6 m-auto md:px-12 lg:px-7">
         <div class="relative z-10 py-40 ml-auto">
           <div class="mx-auto text-center lg:w-2/3">
@@ -156,11 +162,20 @@ setTheme(getTheme());
               class="flex flex-wrap justify-center mt-16 gap-y-4 gap-x-6"
             >
               <button
-                id="buttonOne"
                 @click="scrollTo('work')"
-                class="relative flex items-center w-auto px-10 group h-14 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-tr before:to-pulse-yellow-100 before:from-pulse-yellow-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+                :class="
+                  color === 'dark'
+                    ? 'before:bg-pulse-yellow-200 text-gray-800'
+                    : 'before:bg-gray-800 text-pulse-yellow-200'
+                "
+                class="relative flex items-center p-5 px-4 group w-max before:absolute before:inset-0 before:rounded-3xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
               >
-                <span class="relative text-xl font-medium text-gray-800 w-max">
+                <span
+                  class="relative leading-[0] flex w-max items-center font-medium"
+                >
+                  <ScrollDown
+                    class="w-0 group-hover:w-8 h-8 transition-all duration-300 ease-in-out group-hover:mr-2"
+                  />
                   See My Work
                 </span>
               </button>

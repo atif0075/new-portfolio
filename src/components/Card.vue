@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 // import aos
 
 import { onMounted } from "vue";
+import DarkBg from "./DarkBg.vue";
 defineProps({
   title: String,
   description: String,
@@ -32,7 +33,7 @@ defineProps({
       class="absolute z-0 -inset-x-8 hidden scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
     >
       <svg
-        class="w-full blur-3xl contrast-150"
+        class="w-full blur-3xl contrast-150 hidden lg:block"
         viewBox="0 0 1440 1024"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +64,7 @@ defineProps({
           </clipPath>
         </defs>
       </svg>
+      <DarkBg class="lg:hidden" />
     </div>
     <div class="relative z-10">
       <h1

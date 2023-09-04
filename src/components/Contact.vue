@@ -16,7 +16,7 @@ const btnList = [
   {
     title: "Email",
     icon: "basil:envelope-solid",
-    link: "mailto:connectsatif@gmail.com",
+    link: "mailto:connectsatif@gmail.com?subject=Wanna hire you for a project&body=Hi Atif,",
   },
   {
     title: "Whatsapp",
@@ -118,16 +118,18 @@ const btnList = [
         </div>
         <div class="mt-5">
           <button
-            class="relative overflow-hidden flex items-center justify-center w-full p-5 px-4 before:bg-gray-900 text-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-3xl before:transition before:duration-300 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+            class="relative overflow-hidden flex items-center justify-center w-full p-5 px-4 group rounded-3xl bg-gray-900 transition-all duration-300 ease-in-out text-pulse-yellow-200"
           >
-            <span
-              class="relative leading-[0] flex w-max items-center font-medium"
+            <div
+              class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
             >
-              <div
-                class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
-              >
+              <div class="rounded-3xl overflow-hidden">
                 <DarkBg />
               </div>
+            </div>
+            <span
+              class="relative z-10 leading-[0] flex w-max items-center font-medium"
+            >
               <Icon
                 icon="carbon:send-alt"
                 class="w-0 h-6 transition-all duration-300 ease-in-out group-hover:mr-2 group-hover:w-6"
