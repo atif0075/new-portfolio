@@ -184,7 +184,7 @@ const submittedMsg = () => {
       </div>
       <div
         v-else
-        class="relative flex justify-center items-center overflow-hidden p-8 lg:col-span-2 lg:p-10 dark:bg-gray-900 rounded-5xl"
+        class="relative flex justify-center items-center overflow-hidden p-8 lg:col-span-2 lg:p-10 bg-pulse-yellow-200 dark:bg-gray-900 rounded-5xl"
       >
         <div v-if="loading">
           <Icon
@@ -194,7 +194,7 @@ const submittedMsg = () => {
         </div>
         <h1
           v-if="!loading && !isError"
-          class="text-3xl text-center font-medium text-gray-800 dark:text-pulse-yellow-400"
+          class="text-xl text-center font-medium text-gray-800 dark:text-pulse-yellow-200 relative z-10"
         >
           Your message has been sent successfully. I will get back to you as
           soon as possible.
