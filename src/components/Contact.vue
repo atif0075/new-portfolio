@@ -26,9 +26,33 @@ const btnList = [
     color: "dark",
   },
 ];
+const name = ref("");
+const email = ref("");
+const message = ref("");
 const submited = ref(false);
+const loading = ref(false);
+const isError = ref(false);
 const submittedMsg = () => {
   submited.value = true;
+  loading.value = true;
+  // https://formcarry.com/s/3WfCbs_RKN
+  fetch("https://formcarry.com/s/3WfCbs_RKN", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    }),
+  })
+    .then((response) => {
+      loading.value = false;
+    })
+    .catch((error) => {
+      loading.value = false;
+      isError.value = true;
+      console.error("Error:", error);
+    });
 };
 </script>
 <template>
@@ -75,13 +99,10 @@ const submittedMsg = () => {
         </a>
       </div>
 
-      <form
+      <div
         data-aos="fade-up"
         data-aos-duration="1200"
         v-if="!submited"
-        action="https://formsubmit.co/connectsatif@gmail.com"
-        method="post"
-        @submit.prevent="submittedMsg"
         class="relative p-8 lg:col-span-2 lg:p-10 grad rounded-5xl"
       >
         <div class="grid grid-cols-1 gap-5 space-y-2 lg:grid-cols-2">
@@ -91,6 +112,7 @@ const submittedMsg = () => {
                 placeholder="Name"
                 type="text"
                 name="name"
+                v-model="name"
                 required
                 class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               />
@@ -105,6 +127,7 @@ const submittedMsg = () => {
                 placeholder="Email"
                 type="email"
                 name="email"
+                v-model="email"
                 required
                 class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border dark:border-none outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               />
@@ -123,6 +146,7 @@ const submittedMsg = () => {
                 placeholder="Your Message"
                 name="message"
                 required
+                v-model="message"
                 class="w-full h-full resize-none relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 dark:border-none rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               ></textarea>
               <div
@@ -136,7 +160,7 @@ const submittedMsg = () => {
         </div>
         <div class="mt-5">
           <button
-            type="submit"
+            @click="submittedMsg"
             class="relative overflow-hidden flex items-center justify-center w-full p-5 px-4 group rounded-3xl bg-gray-900 transition-all duration-300 ease-in-out text-pulse-yellow-200"
           >
             <div
@@ -157,16 +181,29 @@ const submittedMsg = () => {
             </span>
           </button>
         </div>
-      </form>
+      </div>
       <div
         v-else
-        class="relative overflow-hidden p-8 lg:col-span-2 lg:p-10 dark:bg-gray-900 rounded-5xl"
+        class="relative flex justify-center items-center overflow-hidden p-8 lg:col-span-2 lg:p-10 dark:bg-gray-900 rounded-5xl"
       >
+        <div v-if="loading">
+          <Icon
+            icon="line-md:loading-loop"
+            class="w-10 h-10 text-pulse-yellow-200 animate-spin"
+          />
+        </div>
         <h1
+          v-if="!loading && !isError"
           class="text-3xl text-center font-medium text-gray-800 dark:text-pulse-yellow-400"
         >
           Your message has been sent successfully. I will get back to you as
           soon as possible.
+        </h1>
+        <h1
+          class="text-3xl text-center font-medium text-gray-800 dark:text-pulse-yellow-400"
+          v-if="isError"
+        >
+          Something went wrong. Please try again later.
         </h1>
         <div
           class="absolute z-0 -inset-x-8 hidden scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
