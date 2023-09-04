@@ -1,5 +1,6 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+import DarkBg from "./DarkBg.vue";
 const btnList = [
   {
     title: "Github",
@@ -26,7 +27,7 @@ const btnList = [
 ];
 </script>
 <template>
-  <div class="container py-16 mx-auto p-2">
+  <div class="container p-2 py-16 mx-auto">
     <!-- <button @click="morph">Morph!</button> -->
     <div data-aos="fade-up" data-aos-duration="1000">
       <h1
@@ -35,71 +36,99 @@ const btnList = [
         Contact
       </h1>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
+    <div class="grid grid-cols-1 gap-5 mt-10 lg:grid-cols-3">
       <div class="grid grid-cols-2 gap-5">
+        <!-- data-aos="fade-up"
+        data-aos-duration="1000" -->
         <a
           v-for="(item, index) in btnList"
           :key="index"
           :href="item.link"
           target="_blank"
-          data-aos="fade-up"
-          data-aos-duration="500"
           :class="
             item.color === 'dark'
-              ? 'before:bg-gray-800 '
-              : 'before:bg-pulse-yellow-200 dark:before:bg-pulse-yellow-400'
+              ? 'bg-gray-800 dark:bg-gray-900 text-pulse-yellow-200 dark:text-pulse-yellow-300'
+              : 'grad text-gray-800'
           "
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+          class="relative z-0 flex flex-col justify-center p-8 overflow-hidden duration-300 ease-in-out transform hover:scale-95 lg:p-10 rounded-5xl"
         >
-          <button
-            :class="
-              item.color === 'dark' ? 'text-pulse-yellow-200' : 'text-gray-800'
-            "
+          <div
+            v-if="item.color === 'dark'"
+            class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
           >
-            <span
-              class="relative flex flex-col items-center justify-center text-2xl font-medium"
-            >
-              <Icon
-                :icon="item.icon"
-                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-              />
+            <DarkBg />
+          </div>
+          <div class="relative z-10 flex flex-col items-center justify-center">
+            <Icon
+              :icon="item.icon"
+              class="w-10 h-10 transition-all duration-300 ease-in-out"
+            />
+            <h1 class="font-medium uppercase">
               {{ item.title }}
-            </span>
-          </button>
+            </h1>
+          </div>
         </a>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1200"
-        class="lg:col-span-2 p-8 lg:p-10 grad rounded-4xl"
-      >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 space-y-2">
+      <!-- data-aos="fade-up"
+      data-aos-duration="1200" -->
+      <div class="relative p-8 lg:col-span-2 lg:p-10 grad rounded-5xl">
+        <div class="grid grid-cols-1 gap-5 space-y-2 lg:grid-cols-2">
           <div class="grid gap-5">
-            <input
-              placeholder="Name"
-              type="text"
-              class="w-full p-5 text-lg border outline-none bg-pulse-yellow-100 border-zinc-800 rounded-3xl placeholder:text-gray-800 text-gray-800"
-            />
-            <input
-              placeholder="Email"
-              type="text"
-              class="w-full p-5 text-lg bg-pulse-yellow-100 border border-zinc-800 outline-none rounded-3xl placeholder:text-zinc-800 text-gray-800"
-            />
+            <div class="relative overflow-hidden rounded-3xl dark:bg-gray-900">
+              <input
+                placeholder="Name"
+                type="text"
+                class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
+              />
+              <div
+                class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+              >
+                <DarkBg />
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-3xl dark:bg-gray-900">
+              <input
+                placeholder="Email"
+                type="email"
+                class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
+              />
+              <div
+                class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+              >
+                <DarkBg />
+              </div>
+            </div>
           </div>
           <div>
-            <textarea
+            <!-- <textarea
               placeholder="Your Message"
-              class="w-full h-full p-5 text-lg border border-zinc-800 bg-pulse-yellow-100 outline-none placeholder:text-zinc-800 rounded-4xl text-gray-800"
-            ></textarea>
+              class="w-full h-full p-5 text-lg text-gray-800 border outline-none border-zinc-800 bg-pulse-yellow-100 placeholder:text-zinc-800 rounded-4xl"
+            ></textarea> -->
+            <div class="relative overflow-hidden rounded-3xl dark:bg-gray-900">
+              <textarea
+                placeholder="Your Message"
+                class="w-full h-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 dark:border-none rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
+              ></textarea>
+              <div
+                class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+              >
+                <DarkBg />
+              </div>
+            </div>
           </div>
         </div>
         <div class="mt-5">
           <button
-            class="relative flex items-center justify-center w-full p-5 px-4 before:bg-gray-800 text-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-3xl before:transition before:duration-300 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+            class="relative overflow-hidden flex items-center justify-center w-full p-5 px-4 before:bg-gray-900 text-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-3xl before:transition before:duration-300 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
           >
-            <span
-              class="relative leading-[0] flex w-max items-center font-medium"
-            >
+          <span
+          class="relative leading-[0] flex w-max items-center font-medium"
+          >
+          <div
+            class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+          >
+            <DarkBg />
+          </div>
               <Icon
                 icon="carbon:send-alt"
                 class="w-0 h-6 transition-all duration-300 ease-in-out group-hover:mr-2 group-hover:w-6"

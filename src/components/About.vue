@@ -20,14 +20,13 @@ const skills = [
       <h1
         class="relative inline-block mt-4 font-mono text-3xl font-bold tracking-widest text-gray-700 capitalize sm:text-5xl lg:text-7xl dark:text-gray-300"
       >
-        <span class="absolute top-0 right-10 text-2xl lowercase"> me </span>
         About
       </h1>
     </div>
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      class="relative overflow-hidden p-8 mt-10 bg-gray-900 lg:p-10 text-pulse-yellow-100 rounded-4xl"
+      class="relative overflow-hidden p-8 mt-10 bg-gray-900 lg:p-10 text-pulse-yellow-100 rounded-5xl"
     >
       <div
         class="absolute -inset-x-8 hiddens scale-y-150 opacity-60 dark:block sm:scale-y-100 lg:-top-56"

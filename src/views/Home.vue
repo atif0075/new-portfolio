@@ -102,7 +102,7 @@ setTheme(getTheme());
     <nav class="flex items-center justify-between p-2">
       <button
         @click="scrollTo('about', 4000)"
-        class="py-2 px-4 bg-[#f5f2f1] font-semibold rounded-full text-sm"
+        class="py-2 px-4 bg-gray-100 dark:bg-pulse-yellow-200 font-semibold rounded-full text-sm"
       >
         About
       </button>
