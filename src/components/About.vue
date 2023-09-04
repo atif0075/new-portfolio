@@ -101,7 +101,7 @@ onMounted(() => {
         <div class="space-y-3">
           <div data-aos="fade-up" data-aos-duration="1300">
             <h1>
-              <i> Backgroud__ </i>
+              <i> Backgroud </i>
             </h1>
             <div>
               A passionate web developer from Pakistan, with a Bachelor's degree
@@ -143,7 +143,7 @@ onMounted(() => {
         <div class="space-y-3">
           <div data-aos="fade-up" data-aos-duration="1300">
             <h1>
-              <i> Enthusiasms__ </i>
+              <i> Enthusiasms </i>
             </h1>
             <div>
               Beyond coding, I'm also an advocate for knowledge-sharing and
@@ -171,7 +171,7 @@ onMounted(() => {
           </h1>
           <div data-aos="fade-up" data-aos-duration="1300">
             <h1>
-              <i> Skills __ </i>
+              <i> Skills </i>
             </h1>
             <div class="flex flex-wrap items-start justify-start w-full">
               <span

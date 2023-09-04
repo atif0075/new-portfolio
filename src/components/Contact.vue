@@ -50,7 +50,7 @@ const btnList = [
               ? 'bg-gray-800 dark:bg-gray-900 text-pulse-yellow-200 dark:text-pulse-yellow-300'
               : 'grad text-gray-800'
           "
-          class="relative z-0 flex flex-col justify-center p-8 overflow-hidden duration-300 ease-in-out transform hover:scale-95 lg:p-10 rounded-5xl"
+          class="relative z-0 flex flex-col justify-center items-center p-8 overflow-hidden duration-300 ease-in-out hover:!scale-95 lg:p-10 rounded-5xl"
         >
           <div
             v-if="item.color === 'dark'"
@@ -93,7 +93,7 @@ const btnList = [
               <input
                 placeholder="Email"
                 type="email"
-                class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
+                class="w-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border dark:border-none outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               />
               <div
                 class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
@@ -103,12 +103,16 @@ const btnList = [
             </div>
           </div>
           <div>
-            <div class="relative overflow-hidden rounded-3xl dark:bg-gray-900">
+            <div
+              class="relative h-full overflow-hidden rounded-3xl dark:bg-gray-900"
+            >
               <textarea
                 placeholder="Your Message"
-                class="w-full h-full relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 dark:border-none rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
+                resize="none"
+                class="w-full h-full resize-none relative z-10 dark:text-pulse-yellow-300 p-5 text-lg text-gray-800 border outline-none bg-pulse-yellow-100 dark:bg-transparent border-zinc-800 dark:border-none rounded-3xl placeholder:text-gray-800 dark:placeholder:text-pulse-yellow-300"
               ></textarea>
               <div
+                resize-none
                 class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
               >
                 <DarkBg />

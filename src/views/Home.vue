@@ -4,6 +4,7 @@ import AbstractJSON from "../assets/abstract.json";
 // import Services from "../components/Services.vue";
 import ScrollDown from "../components/ScrollDown.vue";
 import { Icon } from "@iconify/vue";
+import Footer from "../components/Footer.vue";
 // import { animate, stagger } from "motion";
 import HeroBg from "../components/HeroBg.vue";
 import gsap from "gsap";
@@ -103,7 +104,7 @@ setTheme(getTheme());
   <main id="nav" class="container mx-auto">
     <nav class="flex items-center justify-between p-2">
       <button
-        @click="scrollTo('about', 4000)"
+        @click="scrollTo('about', 2500)"
         class="py-2 px-4 bg-gray-100 dark:bg-pulse-yellow-200 font-semibold rounded-full text-sm"
       >
         About
@@ -126,7 +127,7 @@ setTheme(getTheme());
               class="sr-only peer"
             />
             <div
-              class="w-11 h-8 bg-transparent border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-3 peer-checked:after:bg-zinc-800 peer-checked:after:border-zinc-800 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-pulse-yellow-200 after:border-gray-300 after:border after:rounded-full after:h-7 after:w-7 after:transition-all peer-checked:bg-pulse-yellow-200"
+              class="w-14 h-8 bg-transparent border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:bg-zinc-800 peer-checked:after:border-zinc-800 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-pulse-yellow-200 after:border-gray-300 after:border after:rounded-full after:h-7 after:w-7 after:transition-all peer-checked:bg-pulse-yellow-200"
             ></div>
           </label>
         </button>
@@ -217,4 +218,5 @@ setTheme(getTheme());
   <Work />
   <About />
   <Contact />
+  <Footer />
 </template>
