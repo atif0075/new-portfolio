@@ -16,6 +16,9 @@ defineProps({
   },
   sm: Boolean,
 });
+const openLink = (link) => {
+  window.open(link, "_blank");
+};
 </script>
 <template>
   <div
@@ -88,6 +91,7 @@ defineProps({
     </div>
     <div class="flex items-start justify-start space-x-3">
       <button
+        @click="openLink(link)"
         :class="
           color === 'dark'
             ? 'before:bg-pulse-yellow-200 text-gray-800'

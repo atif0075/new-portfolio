@@ -12,6 +12,7 @@ import { workData } from "../db";
       :image="Crew1"
       :title="workData.work[0].title"
       :description="workData.work[0].description"
+      :link="workData.work[0].link"
     />
     <div class="grid gap-4">
       <Card
@@ -21,6 +22,7 @@ import { workData } from "../db";
         :sm="item.sm"
         :title="item.title"
         :description="item.description"
+        :link="item.link"
       />
     </div>
   </main>
@@ -32,6 +34,7 @@ import { workData } from "../db";
       :sm="item.sm"
       :title="item.title"
       :description="item.description"
+      :link="item.link"
     />
     <!-- <Card
       sm
@@ -47,6 +50,7 @@ import { workData } from "../db";
         :sm="workData.work[3].sm"
         :title="workData.work[3].title"
         :description="workData.work[3].description"
+        :link="workData.work[3].link"
       />
     </div>
   </main>
@@ -71,6 +75,7 @@ import { workData } from "../db";
         :sm="item.sm"
         :title="item.title"
         :description="item.description"
+        :link="item.link"
         :class="index === 0 ? '' : 'lg:col-span-2'"
       />
     </div>
