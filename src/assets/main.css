@@ -3,7 +3,10 @@
 @tailwind utilities;
 @layer components {
   .grad {
-    @apply bg-gradient-to-tr from-pulse-yellow-100 to-pulse-yellow-200;
+    @apply bg-gradient-to-tr from-pulse-yellow-100 to-pulse-yellow-200 dark:from-pulse-yellow-300 dark:to-pulse-yellow-400;
+  }
+  .before-grad {
+    @apply before:bg-gradient-to-tr before:from-pulse-yellow-100 before:to-pulse-yellow-200 before:dark:from-pulse-yellow-300 before:dark:to-pulse-yellow-400;
   }
   .grad-purple {
     @apply bg-gradient-to-tr from-light-purple-100 to-light-purple-200;

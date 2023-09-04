@@ -47,7 +47,7 @@ const btnList = [
           :class="
             item.color === 'dark'
               ? 'before:bg-gray-800 '
-              : 'before:bg-pulse-yellow-200'
+              : 'before:bg-pulse-yellow-200 dark:before:bg-pulse-yellow-400'
           "
           class="relative flex flex-col items-center justify-center w-full p-8 px-4 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
