@@ -1,5 +1,29 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+const btnList = [
+  {
+    title: "Github",
+    icon: "mdi:github",
+    link: "https://www.github.com/atif0075",
+    color: "dark",
+  },
+  {
+    title: "Linkedin",
+    icon: "prime:linkedin",
+    link: "https://www.linkedin.com/in/atif0075/",
+  },
+  {
+    title: "Email",
+    icon: "basil:envelope-solid",
+    link: "mailto:connectsatif@gmail.com",
+  },
+  {
+    title: "Whatsapp",
+    icon: "ic:twotone-whatsapp",
+    link: "https://wa.me/923029798428",
+    color: "dark",
+  },
+];
 </script>
 <template>
   <div class="container py-16 mx-auto p-2">
@@ -14,90 +38,32 @@ import { Icon } from "@iconify/vue";
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
       <div class="grid grid-cols-2 gap-5">
         <a
-          href="https://github.com/atif0075"
+          v-for="(item, index) in btnList"
+          :key="index"
+          :href="item.link"
           target="_blank"
           data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
+          data-aos-duration="500"
+          :class="
+            item.color === 'dark'
+              ? 'before:bg-gray-800 '
+              : 'before:bg-pulse-yellow-200'
+          "
+          class="relative flex flex-col items-center justify-center w-full p-8 px-4 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
         >
           <button
-            data-aos="zoom-in"
-            data-aos-duration="1200"
-            class="text-pulse-yellow-200"
+            :class="
+              item.color === 'dark' ? 'text-pulse-yellow-200' : 'text-gray-800'
+            "
           >
             <span
               class="relative flex flex-col items-center justify-center text-2xl font-medium"
             >
               <Icon
-                icon="mdi:github"
+                :icon="item.icon"
                 class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
               />
-              Github
-            </span>
-          </button>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/atif0075/"
-          target="_blank"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
-        >
-          <button
-            data-aos="zoom-in"
-            data-aos-duration="1200"
-            class="text-gray-800"
-          >
-            <span
-              class="relative flex flex-col items-center justify-center text-2xl font-medium"
-            >
-              <Icon
-                icon="prime:linkedin"
-                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-              />
-              Linkedin
-            </span>
-          </button>
-        </a>
-
-        <a
-          href="mailto:connectsatif@gmail.com"
-          target="_blank"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 before:bg-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
-        >
-          <button
-            data-aos="zoom-in"
-            data-aos-duration="1200"
-            class="text-gray-800"
-          >
-            <span
-              class="relative flex flex-col items-center justify-center text-2xl font-medium"
-            >
-              <Icon
-                icon="basil:envelope-solid"
-                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-              />
-              Email
-            </span>
-          </button>
-        </a>
-        <a
-          href="https://wa.me/923029798428"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="relative flex flex-col items-center justify-center w-full p-8 px-4 text-pulse-yellow-200 before:bg-gray-800 group before:absolute before:inset-0 before:rounded-4xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
-        >
-          <button data-aos="zoom-in" data-aos-duration="1200">
-            <span
-              class="relative flex flex-col items-center justify-center text-2xl font-medium"
-            >
-              <Icon
-                icon="ic:twotone-whatsapp"
-                class="w-8 h-8 mr-2 transition-all duration-300 ease-in-out group-hover:w-7"
-              />
-              Whatsapp
+              {{ item.title }}
             </span>
           </button>
         </a>
