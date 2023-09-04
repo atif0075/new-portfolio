@@ -38,13 +38,13 @@ const btnList = [
     </div>
     <div class="grid grid-cols-1 gap-5 mt-10 lg:grid-cols-3">
       <div class="grid grid-cols-2 gap-5">
-        <!-- data-aos="fade-up"
-        data-aos-duration="1000" -->
         <a
           v-for="(item, index) in btnList"
           :key="index"
           :href="item.link"
           target="_blank"
+          data-aos="fade-up"
+          data-aos-duration="1000"
           :class="
             item.color === 'dark'
               ? 'bg-gray-800 dark:bg-gray-900 text-pulse-yellow-200 dark:text-pulse-yellow-300'
@@ -69,9 +69,12 @@ const btnList = [
           </div>
         </a>
       </div>
-      <!-- data-aos="fade-up"
-      data-aos-duration="1200" -->
-      <div class="relative p-8 lg:col-span-2 lg:p-10 grad rounded-5xl">
+
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1200"
+        class="relative p-8 lg:col-span-2 lg:p-10 grad rounded-5xl"
+      >
         <div class="grid grid-cols-1 gap-5 space-y-2 lg:grid-cols-2">
           <div class="grid gap-5">
             <div class="relative overflow-hidden rounded-3xl dark:bg-gray-900">
@@ -100,10 +103,6 @@ const btnList = [
             </div>
           </div>
           <div>
-            <!-- <textarea
-              placeholder="Your Message"
-              class="w-full h-full p-5 text-lg text-gray-800 border outline-none border-zinc-800 bg-pulse-yellow-100 placeholder:text-zinc-800 rounded-4xl"
-            ></textarea> -->
             <div class="relative overflow-hidden rounded-3xl dark:bg-gray-900">
               <textarea
                 placeholder="Your Message"
@@ -121,14 +120,14 @@ const btnList = [
           <button
             class="relative overflow-hidden flex items-center justify-center w-full p-5 px-4 before:bg-gray-900 text-pulse-yellow-200 group before:absolute before:inset-0 before:rounded-3xl before:transition before:duration-300 active:duration-75 active:before:scale-95 disabled:before:scale-100 disabled:before:bg-gray-300"
           >
-          <span
-          class="relative leading-[0] flex w-max items-center font-medium"
-          >
-          <div
-            class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
-          >
-            <DarkBg />
-          </div>
+            <span
+              class="relative leading-[0] flex w-max items-center font-medium"
+            >
+              <div
+                class="absolute z-0 hidden scale-y-150 -inset-x-8 opacity-60 dark:block sm:scale-y-100 lg:-top-56"
+              >
+                <DarkBg />
+              </div>
               <Icon
                 icon="carbon:send-alt"
                 class="w-0 h-6 transition-all duration-300 ease-in-out group-hover:mr-2 group-hover:w-6"
