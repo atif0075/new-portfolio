@@ -93,7 +93,7 @@ setTheme(getTheme());
         class="dark:invert"
       />
       <div class="flex items-center justify-start space-x-2">
-        <button>
+        <button aria-label="toggle theme">
           <label class="relative inline-flex items-center cursor-pointer">
             <input
               type="checkbox"
@@ -168,9 +168,9 @@ setTheme(getTheme());
                 :key="index"
                 class="text-left detailsWrap"
               >
-                <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+                <h1 class="text-lg font-semibold text-gray-700 dark:text-white">
                   {{ item.title }}
-                </h6>
+                </h1>
                 <p class="mt-2 text-gray-500">
                   {{ item.desc }}
                 </p>
