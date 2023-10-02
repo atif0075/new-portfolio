@@ -1,9 +1,6 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import DarkBg from "./DarkBg.vue";
-gsap.registerPlugin(ScrollTrigger);
 const skills = [
   "Vue",
   "React",

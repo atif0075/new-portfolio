@@ -1,13 +1,9 @@
 <script setup>
 import NameJSON from "../assets/name.json";
 import AbstractJSON from "../assets/abstract.json";
-// import Services from "../components/Services.vue";
 import ScrollDown from "../components/ScrollDown.vue";
-import { Icon } from "@iconify/vue";
 import Footer from "../components/Footer.vue";
-// import { animate, stagger } from "motion";
 import HeroBg from "../components/HeroBg.vue";
-import gsap from "gsap";
 import MoveTo from "moveto";
 import SplitType from "split-type";
 import { onMounted, ref } from "vue";
@@ -16,6 +12,7 @@ import About from "../components/About.vue";
 import Contact from "../components/Contact.vue";
 import { heroData } from "../db";
 import DarkBg from "../components/DarkBg.vue";
+import { animate, stagger } from "motion";
 const isShowLottie = ref(false);
 onMounted(() => {
   const headingOne = new SplitType("#headingOne", {
@@ -25,45 +22,23 @@ onMounted(() => {
     types: "words",
   });
   const buttonWrap = document.querySelector("#buttonWrap");
-  const detailsWraped = document.getElementsByClassName("detailsWrap");
-  const heroElements = [
-    ...headingOne.chars,
-    ...paraOne.words,
-    buttonWrap,
-    // detailsWrap,
-  ];
-  const tl = gsap.timeline();
-  tl.fromTo(
+  const detailsWrap = document.getElementsByClassName("detailsWrap");
+  const heroElements = [...headingOne.chars, ...paraOne.words, buttonWrap];
+  animate(
     heroElements,
     {
-      y: 24,
-      opacity: 0,
+      y: [24, 0],
+      opacity: [0, 1],
     },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.05,
-      delay: 0.5,
-      onComplete: () => {
-        isShowLottie.value = true;
-        gsap.fromTo(
-          detailsWraped,
-          {
-            y: 24,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            stagger: 0.5,
-          }
-        );
-      },
-    },
-    "-=0.5"
-  );
+    { duration: 0.8, delay: stagger(0.05) }
+  ).finished.then(() => {
+    isShowLottie.value = true;
+    animate(
+      detailsWrap,
+      { y: [100, 0], opacity: [0, 1] },
+      { duration: 1, delay: stagger(0.4) }
+    );
+  });
 });
 const scrollTo = (id, duration = 2000) => {
   const moveTo = new MoveTo({
