@@ -101,7 +101,7 @@ onMounted(() => {
         <div class="space-y-3">
           <div data-aos="fade-up" data-aos-duration="1300">
             <h1>
-              <i> Backgroud </i>
+              <i> Background </i>
             </h1>
             <div>
               A passionate web developer from Pakistan, with a Bachelor's degree
